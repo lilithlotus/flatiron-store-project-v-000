@@ -5,4 +5,8 @@ class Cart < ActiveRecord::Base
 
   def self.total
   end
+
+  def add_item
+    
+  end
 end

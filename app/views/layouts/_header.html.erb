@@ -8,6 +8,10 @@
         <%= link_to("Sign up", new_user_registration_path) %>
         <%= link_to("sign in", new_user_session_path) %>
         <%= link_to("Sign out", destroy_user_session_path, :method => 'delete') %>
+        <% if session[:user_id] %>
+        <% @user = User.find_by(id: session[:user_id]) %>
+        <%= "Signed in as #{@user.email}" %>
+        <% end %>
 
     </ul>
 </nav>
